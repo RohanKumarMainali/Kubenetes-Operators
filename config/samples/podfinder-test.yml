@@ -1,0 +1,26 @@
+apiVersion: crd.rohan.com/v1
+kind: PodFinder
+metadata:
+  name: podfinder-01
+  labels:
+    app.kubernetes.io/name: podfinder
+    app.kubernetes.io/instance: podfinder-sample
+    app.kubernetes.io/part-of: operator-v1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator-v1
+spec:
+  name: mongo
+
+---
+apiVersion: crd.rohan.com/v1
+kind: PodFinder
+metadata:
+  name: podfinder-02
+  labels:
+    app.kubernetes.io/name: podfinder
+    app.kubernetes.io/instance: podfinder-sample
+    app.kubernetes.io/part-of: operator-v1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: operator-v1
+spec:
+  name: nginx
