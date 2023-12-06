@@ -1,0 +1,31 @@
+# permissions for end users to edit podfinders.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: podfinder-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: crd
+    app.kubernetes.io/part-of: crd
+    app.kubernetes.io/managed-by: kustomize
+  name: podfinder-editor-role
+rules:
+- apiGroups:
+  - crd.rohan.com
+  resources:
+  - podfinders
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - crd.rohan.com
+  resources:
+  - podfinders/status
+  verbs:
+  - get
